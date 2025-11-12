@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+:root{
+    --fonte-grande: 3.2rem;
+    --fonte-media: 2.4rem;
+    --fonte-pequena: 1.6rem;
+    --cor-brancoAcinzentado: #F7F7F7;
+    --cor-AzulEscuuro: #244058;
+    --cor-bg: #5682B1;
+    --cor-removeBtn: #8B0000;
+    --cor-pessego: #FFE8DB;
+    --cor-preto: #000000;
+    --tipografia: "Caveat", cursive;
+}
+
+
+html, body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%
+}
+
+body{
+    background-color: var(--cor-preto);
+}
+
+.task-container{
+    display: flex;
+    padding: 1rem 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-header{
+    padding: 0 2rem;
+    background-color: var(--cor-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.title-header > h1{
+    font-size: 3.2rem;
+    color: var(--cor-brancoAcinzentado);
+    font-family: var(--tipografia);
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+}
+
+
+.task-header{
+    display: flex;
+    flex-direction: column; 
+    width: calc(96rem + 2rem);
+    padding: 2.4rem;
+    gap: 1.6rem;
+    background-color: var(--cor-bg);
+    border-radius: 2rem;
+}
+
+.task-header > .task-input{
+
+    padding: 0 0.8rem;
+    font-size: var(--fonte-media);
+    font-family: var(--tipografia);
+    color: var(--cor-preto);
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.task-header > .btn-add{
+    width: 24rem;
+    padding: 0.4rem 0;
+    align-self: center;
+    font-size: var(--fonte-media);
+    font-family: var(--tipografia);
+    border-radius: 2rem;
+    border: 1px solid var(--cor-brancoAcinzentado);
+    font-weight: 500;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.btn-add:hover{
+    background-color: var(--cor-pessego);
+    color: var(--cor-AzulEscuuro);
+    border-color: var(--cor-pessego);
+    transition: 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.task-list{
+    display: grid;
+    justify-content: center;
+    padding: 0;
+    grid-template-columns: 1fr;
+    width: calc(96rem + 2rem);
+    background-color: var(--cor-bg);
+    border-radius: 1rem;
+    margin-top: 1.6rem;
+}
+
+.task-list > .itemTarefa{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--fonte-grande);
+    background-color: var(--cor-pessego);
+    color: var(--cor-AzulEscuuro);
+    padding: 1rem;
+    margin: 2rem 2rem;
+    font-family: var(--tipografia);
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.task-list > .itemTarefa:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.3s ease;
+}
+
+
+.btn-remover{
+    padding: 0.5rem 1rem;
+    font-family: var(--tipografia);
+    font-size: var(--fonte-media);
+    text-align: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: var(--cor-brancoAcinzentado);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-remover:hover{
+    background-color: var(--cor-removeBtn);
+    color: var(--cor-brancoAcinzentado);
+    transition: 0.3s ease;
+    border-color: var(--cor-removeBtn);
+}
+
+
+@media (min-width: 820px) AND (max-width: 1030px){
+    .task-header{
+        width: 75rem;
+    }
+    .task-list{
+        width: 75rem;
+    }
+}
+
+@media (min-width: 660px) AND (max-width: 819px){
+    .task-header{
+        width:60rem;
+    }
+    .task-list{
+        width: 60rem;
+    }
+}
+
+@media(min-width: 480px) and (max-width: 659px){
+    .task-header{
+        width: 40rem;
+    }
+    .task-list{
+        width: 40rem;
+    }
+}
+
+@media(min-width: 350px) and (max-width: 479px){
+    .task-header{
+        width: 30rem;
+    }
+
+    .task-list{
+        width: 30rem;
+        grid-template-columns: 1fr;
+    }
+
+    .title-header{
+        width: 20rem;
+    }
+
+    .title-header > h1{
+        font-size: 2.1rem;
+        text-align: center;
+    }
+}
+
